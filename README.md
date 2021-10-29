@@ -26,7 +26,7 @@ library(goyav)
 
 ## The `goyav` package
 
-### Motivation
+### Description
 
 `goyav` is a shiny App meant to generate GIF from tabular temporal data.
 All customization of the animated plots is done in an interactive
@@ -38,6 +38,29 @@ The dashboard of the application looks like this :
 
 The user is able to navigate into two tabs : “Animate” and “Advanced
 animate”, the latter offering a wider range of customization.
+
+From the *Animate* tab, you may choose the following :
+
+-   X variable (numeric);
+-   Y variable (numeric);
+-   size variable (numeric);
+-   color variable (factor);
+-   temporal variable (numeric);
+-   choose if you want to apply a log-scale to either X, Y or X and Y.
+
+From the *Advanced animated* tab, you may choose the following :
+
+-   X variable (numeric);
+-   Y variable (numeric);
+-   size variable (numeric);
+-   color variable (factor);
+-   temporal variable (numeric);
+-   choose if you want to apply a log-scale to either X, Y or X and Y.
+-   X range;
+-   Y range;
+-   Temporal range;
+-   Animation duration (s);
+-   Factors to include (for the color variable).
 
 ### Demonstration
 
@@ -52,36 +75,43 @@ install.packages("gapminder")
 ``` r
 # load `gapminder`
 library(gapminder)
-head(gapminder)
+
+# display first rows of dataset
+knitr::kable(head(gapminder))
 ```
 
-    ## # A tibble: 6 x 6
-    ##   country     continent  year lifeExp      pop gdpPercap
-    ##   <fct>       <fct>     <int>   <dbl>    <int>     <dbl>
-    ## 1 Afghanistan Asia       1952    28.8  8425333      779.
-    ## 2 Afghanistan Asia       1957    30.3  9240934      821.
-    ## 3 Afghanistan Asia       1962    32.0 10267083      853.
-    ## 4 Afghanistan Asia       1967    34.0 11537966      836.
-    ## 5 Afghanistan Asia       1972    36.1 13079460      740.
-    ## 6 Afghanistan Asia       1977    38.4 14880372      786.
+| country     | continent | year | lifeExp |      pop | gdpPercap |
+|:------------|:----------|-----:|--------:|---------:|----------:|
+| Afghanistan | Asia      | 1952 |  28.801 |  8425333 |  779.4453 |
+| Afghanistan | Asia      | 1957 |  30.332 |  9240934 |  820.8530 |
+| Afghanistan | Asia      | 1962 |  31.997 | 10267083 |  853.1007 |
+| Afghanistan | Asia      | 1967 |  34.020 | 11537966 |  836.1971 |
+| Afghanistan | Asia      | 1972 |  36.088 | 13079460 |  739.9811 |
+| Afghanistan | Asia      | 1977 |  38.438 | 14880372 |  786.1134 |
 
-The `goyav` package is a tool aiming at generating animated gifs from
-temporal data. In order to create any gif, your dataframe should have
+In order to be able to create any GIF, your dataframe should have
 candidate columns for the following variables: X, Y, size and temporal.
 Therefore, *calling the `goyav` function on a dataframe with less than 4
 numeric variables will return an error*.
 
 ``` r
+# try to call the `goyav` function on the first 3 columns of the `gapminder` dataset
 goyav(gapminder[,1:3])
 ```
 
     ## Error in goyav(gapminder[, 1:3]): Your dataframe should have at least 4 numeric variables.
 
-## Including Plots
+Let’s now call `goyav` on the whole dataset :
 
-You can also embed plots, for example:
+``` r
+# call `goyav` on `gapminder`
+goyav(gapminder)
+```
 
-![](README/Animation2.gif)<!-- -->
+#### View from the *Animate* tab
 
-Note that the `echo = FALSE` parameter was added to the code chunk to
-prevent printing of the R code that generated the plot.
+![](README/Animate.gif)<!-- -->
+
+#### View from the *Advanced animate* tab
+
+![](README/AdvancedAnimate.gif)<!-- -->
