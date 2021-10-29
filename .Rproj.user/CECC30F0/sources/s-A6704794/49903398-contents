@@ -1,4 +1,0 @@
-Name: goyav
-Description: Create animated gifs from dataframes with at least 4 numeric variables.
-Binding: insertInAddin
-Interactive: true
