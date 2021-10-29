@@ -34,7 +34,7 @@ window.
 
 The dashboard of the application looks like this :
 
-![](dashboard.PNG)<!-- -->
+![](README/dashboard.PNG)<!-- -->
 
 The user is able to navigate into two tabs : “Animate” and “Advanced
 animate”, the latter offering a wider range of customization.
