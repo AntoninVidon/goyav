@@ -1,4 +1,4 @@
-Tutorial: the ‘goyav’ package
+Tutorial: the `goyav` package
 ================
 Antonin Vidon
 10/29/2021
@@ -23,6 +23,9 @@ install_github("AntoninVidon/goyav")
 # import 'goyav'
 library(goyav)
 ```
+
+You may have to upgrade some of your packages in order to successfully
+install `goyav`.
 
 ## The `goyav` package
 

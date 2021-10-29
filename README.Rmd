@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: the 'goyav' package"
+title: "Tutorial: the `goyav` package"
 author: "Antonin Vidon"
 date: "10/29/2021"
 output: github_document
@@ -29,6 +29,8 @@ install_github("AntoninVidon/goyav")
 # import 'goyav'
 library(goyav)
 ```
+
+You may have to upgrade some of your packages in order to successfully install `goyav`.
 
 ## The `goyav` package
 
