@@ -6,7 +6,7 @@ Antonin Vidon
 ## Installation
 
 The package is located on my
-[GitHub](https://github.com/AntoninVidon/goyav). From the RStudio IDE,
+[GitHub](https://github.com/anvdn/goyav). From the RStudio IDE,
 You should install it with the `devtools` library using the following
 lines of code.
 
@@ -18,7 +18,7 @@ install.packages("devtools")
 library(devtools)
 
 # install 'goyav' from github
-install_github("AntoninVidon/goyav")
+install_github("anvdn/goyav")
 ```
 
 ``` r
